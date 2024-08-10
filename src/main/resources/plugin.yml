@@ -1,0 +1,10 @@
+name: PvpBlocker
+version: '${project.version}'
+main: cupcqkeee.plugin.pvpblocker.PvpBlockerCommand
+api-version: '1.20'
+author: CUPcqkeee
+description: Отменяет ПВП конкретному игроку
+commands:
+  pb:
+    description: Включить или выключить режим ПВП
+    usage: /pb <on/off>
