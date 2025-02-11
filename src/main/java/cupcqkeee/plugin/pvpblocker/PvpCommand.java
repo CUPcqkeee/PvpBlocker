@@ -16,7 +16,7 @@ public class PvpCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Only players can use this command.");
+            sender.sendMessage("Вы не игрок сир");
             return false;
         }
 
@@ -24,7 +24,7 @@ public class PvpCommand implements CommandExecutor {
         String playerName = player.getName();
 
         if (args.length != 1) {
-            player.sendMessage("Usage: /pvpblocker <on/off>");
+            player.sendMessage("Используйте: /pvpblocker <on/off>");
             return false;
         }
 
@@ -32,12 +32,12 @@ public class PvpCommand implements CommandExecutor {
 
         if (action.equalsIgnoreCase("on")) {
             plugin.addProtectedPlayer(playerName);
-            player.sendMessage("PvP protection is now ON.");
+            player.sendMessage("Защита от ПВП Включена!");
         } else if (action.equalsIgnoreCase("off")) {
             plugin.removeProtectedPlayer(playerName);
-            player.sendMessage("PvP protection is now OFF.");
+            player.sendMessage("Защита от ПВП Выключена!");
         } else {
-            player.sendMessage("Usage: /pvpblocker <on/off>");
+            player.sendMessage("Используйте: /pvpblocker <on/off>");
             return false;
         }
         return true;
